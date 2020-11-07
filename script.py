@@ -20,6 +20,19 @@ def historic_request():
 	return historic_data
 
 
+def format_historic_data():
+	hist_response = historic_request()
+	rates_by_date = hist_response["rates"]
+	hist_data = []
+	for key, value in rates_by_date.items():
+		hist_dict = { 'date': key, 'primary_rate': value[primary_currency.upper()], 'secondary_rate': value[secondary_currency.upper()]}
+		hist_data.append(hist_dict)
+	# Sort data into date order
+	hist_data.sort(key = lambda x:x['date'])
+	print(hist_data)
+	return hist_data
+
+	
 # requesting input from the user on details of request
 start_date = validate(input("What start date would you like to look at? (Date format: YYYY-MM-DD):"))
 print("Choosen start date: " + start_date)
