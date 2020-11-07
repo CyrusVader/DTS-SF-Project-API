@@ -13,6 +13,13 @@ import datetime
 historical_url = 'https://api.exchangeratesapi.io/history'
 
 
+def historic_request():
+	# Creating varible of JSON response and return
+	response = requests.get(request_url)
+	historic_data = json.loads(response.text)
+	return historic_data
+
+
 # requesting input from the user on details of request
 start_date = validate(input("What start date would you like to look at? (Date format: YYYY-MM-DD):"))
 print("Choosen start date: " + start_date)
