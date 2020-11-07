@@ -13,6 +13,15 @@ import datetime
 historical_url = 'https://api.exchangeratesapi.io/history'
 
 
+def validate(date_text):
+	# Check that date input is in the correct format
+	try:
+		datetime.datetime.strptime(date_text, '%Y-%m-%d')
+	except ValueError:
+		raise ValueError("Incorrect date format please use YYYY-MM-DD")
+	return date_text
+
+
 def historic_request():
 	# Creating varible of JSON response and return
 	response = requests.get(request_url)
