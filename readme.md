@@ -3,7 +3,7 @@
 ## Project Overview
 A tool which allows you to select two currencies within a given time frame and compare the exchanges rates over time plotting them to a graph to visulise the data. The script is written in Python 3 using the following libaries: virtualenv, json, requests, pandas, numpy and matplotlib.
 
-## How to use
+## How to use (Windows)
 1. Create virtual Enviroment in a new directory using:
 
 ```python
