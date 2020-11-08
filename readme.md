@@ -19,7 +19,7 @@ pip install -r requirements.txt --no-index --find-links file:///tmp/packages
 ```
 4. Run script using:
 ```python
-py exchange.py
+py script.py
 ```
 5. The script will request input for start date and end date as well as two currencies that you would like to compare with the base rate of the Euro
 
